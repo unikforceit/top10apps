@@ -1,5 +1,24 @@
-.top10apps {
-  color: red;
+.page__left-sidebar ul {
+  list-style: none;
+  margin-top: 10px;
+  width: 100%;
+  background: gray;
+  height: 360px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.page__left-sidebar ul li {
+  list-style: none;
+  margin-top: 5px;
+}
+
+.page__left-sidebar .jump_title:after {
+  background-color: #000;
+  display: block;
+  content: " ";
+  height: 1px;
+  width: 90%;
 }
 
 /*# sourceMappingURL=top10apps-addons.css.map */

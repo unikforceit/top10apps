@@ -212,6 +212,17 @@ final class Top10appsPlugin {
     }
 
     /**
+     * Include required files
+     *
+     */
+    private function includes() {
+
+
+        require_once Top10apps_PLUGIN_DIR . 'includes/helper-functions.php';
+
+    }
+
+    /**
      * Initialize
      *
      * Load the addons functionality only after Elementor is initialized.
@@ -291,6 +302,5 @@ final class Top10appsPlugin {
             wp_enqueue_style( $filename, Top10apps_PLUGIN_URL . 'assets/css/'.$filename);
         }
     }
-
 
 }

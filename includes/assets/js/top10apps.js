@@ -10,14 +10,23 @@
         // Js End
 
     };
+    var Scrollbar = function ($scope, $) {
+
+        // Js Start
+
+        // Js End
+
+    };
 
     $(window).on('elementor/frontend/init', function () {
         if (elementorFrontend.isEditMode()) {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
+            elementorFrontend.hooks.addAction('frontend/element_ready/sidebar_scroll.default', Scrollbar);
             //elementorFrontend.hooks.addAction('frontend/element_ready/nav-builder.default', CDNavMenu);
         }
         else {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
+            elementorFrontend.hooks.addAction('frontend/element_ready/sidebar_scroll.default', Scrollbar);
         }
     });
 console.log('addon js loaded');
