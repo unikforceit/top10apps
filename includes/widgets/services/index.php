@@ -5,17 +5,17 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class  top10apps_sidebar_scroll extends Widget_Base
+class  top10apps_services extends Widget_Base
 {
 
     public function get_name()
     {
-        return 'sidebar_scroll';
+        return 'top10apps_services';
     }
 
     public function get_title()
     {
-        return __('Sidebar Scroll', 'top10apps');
+        return __('Service Sidebar', 'top10apps');
     }
 
     public function get_icon()
@@ -41,18 +41,48 @@ class  top10apps_sidebar_scroll extends Widget_Base
         $this->add_control(
             'title',
             [
-                'label' => __( 'Title', 'top10apps' ),
+                'label' => __('Title', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'Jump to', 'top10apps' ),
+                'default' => __('Best Web Hosting Services', 'top10apps'),
+            ]
+        );
+        $this->add_control(
+            'btext',
+            [
+                'label' => __('Button', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('Compare All', 'top10apps'),
+            ]
+        );
+        $this->add_control(
+            'blink', [
+                'label' => __('Link', 'top10apps'),
+                'type' => Controls_Manager::URL,
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
             ]
         );
         $repeater = new \Elementor\Repeater();
         $repeater->add_control(
-            'scroll_item',
+            'item',
             [
-                'label' => __( 'Item', 'top10apps' ),
+                'label' => __('Item', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'In a Nutshell', 'top10apps' ),
+                'default' => __('BlueHost', 'top10apps'),
+            ]
+        );
+        $repeater->add_control(
+            'img',
+            [
+                'label' => __( 'Image', 'moda' ),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
             ]
         );
         $repeater->add_control(
@@ -70,15 +100,15 @@ class  top10apps_sidebar_scroll extends Widget_Base
         $this->add_control(
             'list',
             [
-                'label' => __( 'List', 'top10apps' ),
+                'label' => __('List', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'item' => __( 'Time Balanceing', 'top10apps' ),
+                        'item' => __('Time Balanceing', 'top10apps'),
                     ],
                     [
-                        'item' => __( 'Time Balanceing', 'top10apps' ),
+                        'item' => __('Time Balanceing', 'top10apps'),
                     ],
                 ],
                 'title_field' => '{{{ item }}}',
@@ -89,14 +119,14 @@ class  top10apps_sidebar_scroll extends Widget_Base
         $this->start_controls_section(
             'section_settings',
             [
-                'label' => __( 'General', 'top10apps' ),
+                'label' => __('General', 'top10apps'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'post_titlea_color',
             [
-                'label' => __( 'Title Color', 'top10apps' ),
+                'label' => __('Title Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .page__left-sidebar .jump_title' => 'color: {{VALUE}}; border-color: {{VALUE}}',
@@ -107,14 +137,14 @@ class  top10apps_sidebar_scroll extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ttih',
-                'label' => __( 'Title Typography', 'top10apps' ),
+                'label' => __('Title Typography', 'top10apps'),
                 'selector' => '{{WRAPPER}} .page__left-sidebar .jump_title',
             ]
         );
         $this->add_control(
             'post_titlea_colodfr',
             [
-                'label' => __( 'Item Color', 'top10apps' ),
+                'label' => __('Item Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a' => 'color: {{VALUE}}; border-color: {{VALUE}}',
@@ -125,7 +155,7 @@ class  top10apps_sidebar_scroll extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ttsdfih',
-                'label' => __( 'Item Typography', 'top10apps' ),
+                'label' => __('Item Typography', 'top10apps'),
                 'selector' => '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a',
             ]
         );
@@ -133,8 +163,8 @@ class  top10apps_sidebar_scroll extends Widget_Base
             \Elementor\Group_Control_Background::get_type(),
             [
                 'name' => 'backgrouncfbxd',
-                'label' => esc_html__( 'Background', 'top10apps' ),
-                'types' => [ 'classic', 'gradient' ],
+                'label' => esc_html__('Background', 'top10apps'),
+                'types' => ['classic', 'gradient'],
                 'selector' => '{{WRAPPER}} .page__left-sidebar',
             ]
         );
@@ -146,19 +176,30 @@ class  top10apps_sidebar_scroll extends Widget_Base
     {
         $settings = $this->get_settings();
         echo '<!-- built app area start here  -->
-        <div class="page__left-sidebar">
-        <p class="jump_title">'.$settings['title'].'</p>
-            <div class="toc__items">';
-            if ($settings['list']) {
-                foreach ($settings['list'] as $scroll) {
-                    echo '<div class="toc__item"><a '.get_that_link($scroll['link']).'>'.$scroll['item'].'</a></div>';
-                }
+        <div class="top5-prods">
+            <div class="top5-prods__title">
+                <a '.get_that_link($settings['blink']).' class="top5-prods__title__text">'.$settings['title'].'</a>
+            </div>
+            <div class="top5-prods__items">';
+        if ($settings['list']) {
+            foreach ($settings['list'] as $scroll) {
+                echo '<div class="top5-prods__item">
+                        <a '.get_that_link($scroll['link']).'>
+                            <span class="top5-prods__item__icon">'.get_that_image($scroll['img']).'</span>
+                            <span class="top5-prods__item__name">'.$scroll['item'].'</span>
+                            <span class="top5-prods__item__link"><svg class="top5-prods__item__link__arrow" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg"><path d="m18.9166667 10.9166667-3.8333334 3.8333333-3.8333333-3.8333333-1.1666667 1.1666666 5 5 5-5z" fill="#fff" fill-rule="evenodd" transform="matrix(0 1 1 0 -10.916667 -10.083333)"></path></svg></span>
+                        </a>
+                    </div>';
             }
+        }
         echo '</div>
+            <div class="top5-prods__button-container">
+                <a '.get_that_link($settings['blink']).' class="top5-prods__button">'.$settings['btext'].'</a>
+            </div>
         </div>
     <!-- built app area end here  -->';
 
     }
 }
 
-Plugin::instance()->widgets_manager->register(new top10apps_sidebar_scroll());
+Plugin::instance()->widgets_manager->register(new top10apps_services());

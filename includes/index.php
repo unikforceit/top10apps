@@ -82,6 +82,7 @@ final class Top10appsPlugin {
             add_action( 'elementor/init', [ $this, 'init' ] );
         }
         $this->setup_constants();
+        $this->includes();
 
     }
 
@@ -215,11 +216,8 @@ final class Top10appsPlugin {
      * Include required files
      *
      */
-    private function includes() {
-
-
-        require_once Top10apps_PLUGIN_DIR . 'includes/helper-functions.php';
-
+    public function includes() {
+        require_once Top10apps_PLUGIN_DIR . '/helper-functions.php';
     }
 
     /**
@@ -238,7 +236,7 @@ final class Top10appsPlugin {
         add_action('elementor/frontend/after_register_scripts', [$this, 'register_frontend_scripts'], 20);
         add_action('elementor/frontend/after_enqueue_styles', [$this, 'register_frontend_styles'], 20);
         add_action('elementor/editor/before_enqueue_scripts', [$this, 'register_elementor_editor_css'], 20);
-        add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
+        add_action('elementor/widgets/register', [$this, 'register_widgets' ]);
         add_action('elementor/init', [$this, 'add_elementor_category'], 20);
     }
 
