@@ -1,5 +1,5 @@
 <?php
-function top10apps_check_odd_even($data){
+function ae_check_odd_even($data){
     if($data % 2 == 0){
         $data = "Even";
     }
@@ -10,7 +10,7 @@ function top10apps_check_odd_even($data){
     return $data;
 }
 
-function top10apps_client_ratings($count){
+function client_ratings($count){
     $out = '';
     for ($i=0; $i<$count; $i++) {
         $out.= '<i class="fas fa-star"></i>';
