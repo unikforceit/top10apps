@@ -1615,7 +1615,6 @@
             justify-content: space-between;
             -webkit-align-items: center;
             align-items: center;
-            width: 141px;
             height: inherit;
             padding: 30px 30px 30px 0;
           .product-score {
@@ -1780,27 +1779,6 @@
                     width: 90px;
                     height: 40px;
                   }
-                 .toggle-accordion__text {
-                    font-size: 14px;
-                    line-height: 19px;
-                    font-weight: 600;
-                    color: #1789d5;
-                    font-family: hurmegeometricsans_no3_6, Gilroy, Almarai;
-                    transition: color 0.3s linear;
-                  }
-                  .toggle-accordion__icon {
-                    display: -webkit-flex;
-                    display: flex;
-                    width: 9px;
-                    height: 6px;
-                    margin-left: 5px;
-                    background-size: 9px 6px;
-                    background-repeat: no-repeat;
-                    background-image: url("data:image/svg+xml;charset=utf,%3Csvg%20width%3D%2212%22%20height%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cpath%20d%3D%22M1403.6%2028l-4.6%204.6-4.6-4.6-1.4%201.4%206%206%206-6z%22%20id%3D%22a%22%2F%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate%28-1393%20-28%29%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%20fill%3D%22%231789d5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-                    transition: -webkit-transform 0.3s linear, -webkit-transform-origin 0.3s linear;
-                    transition: transform 0.3s linear, transform-origin 0.3s linear;
-                    transition: transform 0.3s linear, transform-origin 0.3s linear, -webkit-transform 0.3s linear, -webkit-transform-origin 0.3s linear;
-                  }
                 }
               }
             }
@@ -1825,6 +1803,189 @@
       .chart-product-text {
         box-shadow: 0 0 7px rgb(0 0 0 / 25%);
         max-width: 835px;
+      }
+    }
+    .addon__sale-badge__icon {
+      width: 11px;
+      height: 15px;
+      fill: #09a789;
+    }
+    .toggle-accordion__text {
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 600;
+      color: #1789d5;
+      font-family: hurmegeometricsans_no3_6, Gilroy, Almarai;
+      transition: color 0.3s linear;
+    }
+   .toggle-accordion__icon {
+      display: -webkit-flex;
+      display: flex;
+      width: 9px;
+      height: 6px;
+      margin-left: 5px;
+      background-size: 9px 6px;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml;charset=utf,%3Csvg%20width%3D%2212%22%20height%3D%228%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cdefs%3E%3Cpath%20d%3D%22M1403.6%2028l-4.6%204.6-4.6-4.6-1.4%201.4%206%206%206-6z%22%20id%3D%22a%22%2F%3E%3C%2Fdefs%3E%3Cg%20transform%3D%22translate%28-1393%20-28%29%22%3E%3Cuse%20xlink%3Ahref%3D%22%23a%22%20fill%3D%22%231789d5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      transition: -webkit-transform 0.3s linear, -webkit-transform-origin 0.3s linear;
+      transition: transform 0.3s linear, transform-origin 0.3s linear;
+      transition: transform 0.3s linear, transform-origin 0.3s linear, -webkit-transform 0.3s linear, -webkit-transform-origin 0.3s linear;
+    }
+    .accordion {
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      background-color: white;
+      transition: all 0.5s ease;
+      height: auto;
+      min-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      scroll-behavior: smooth;
+      max-height: 0;
+      &.accordion-open{
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+        width: inherit;
+        height: auto;
+        min-height: auto;
+        max-height: 300px;
+        background-color: #f5f5f5;
+        transition: all 0.5s ease;
+        opacity: 1;
+      }
+      .accordion-items__product-title {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 600;
+        color: #2d2d2d;
+        padding-bottom: 2px;
+        border-bottom: 1px solid #d8d8d8;
+        margin-bottom: 5px;
+      }
+      .accordion-items__bullet-points {
+        list-style-type: none;
+        padding: 0;
+      }
+      .accordion-items__bullet-points__item {
+        min-height: 21px;
+      }
+      .accordion-items__bullet-points__item:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        background-color: #1789d5;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        position: relative;
+        top: -3px;
+      }
+      .accordion-items__bullet-points__text {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+        color: #2d2d2d;
+        padding-left: 13px;
+      }
+      .accordion-items {
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 30px;
+        border-top: 1px solid #d8d8d8;
+        overflow: hidden;
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        &.accordion-items-open{
+          position: relative;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: row;
+          flex-direction: row;
+          -webkit-align-items: center;
+          align-items: center;
+          width: inherit;
+          height: auto;
+          min-height: auto;
+          max-height: 300px;
+          background-color: #f5f5f5;
+          transition: all 0.5s ease;
+          opacity: 1;
+          -webkit-animation: fadeInDown 0.5s 0.2s forwards;
+          animation: fadeInDown 0.5s 0.2s forwards;
+        }
+        .accordion-items__top {
+          display: -webkit-flex;
+          display: flex;
+          margin: 0 0 30px;
+          -webkit-flex-direction: row;
+          flex-direction: row;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          .accordion-items__left {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-right: 15px;
+          }
+          .accordion-items__right {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            -webkit-align-items: flex-end;
+            align-items: flex-end;
+          }
+        }
+        .accordion-items__bottom {
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: row;
+          flex-direction: row;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          .review-link {
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 600;
+            color: #1789d5;
+            transition: color 0.3s linear;
+            text-decoration: none;
+            white-space: nowrap;
+          }
+          .accordion-items__visit-button {
+            font-size: 14px;
+            line-height: 13px;
+            font-weight: 600;
+            color: #ff4a64;
+            transition: color 0.3s linear;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .accordion .accordion-items {
+        -webkit-animation: fadeInDown 0.5s 0.2s forwards;
+        animation: fadeInDown 0.5s 0.2s forwards;
       }
     }
   }

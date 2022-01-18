@@ -290,10 +290,6 @@ class  top10apps_ad_block2 extends Widget_Base
                                 </div>
                                 <div class="right__container">
                                     <div class="right__CTA-container">
-                                        <div class="social-proof__desktop ">
-                                            <span class="social-proof__text"><span>Over</span> <b>918</b> <span>visits in the last week</span></span>
-                                            <div class="social-proof__arrow-container"></div>
-                                        </div>
                                         <a class="cta-button  nilink"
                                            href="#"
                                           ><span class="cta-button__text">Visit Site</span></a>
@@ -312,6 +308,7 @@ class  top10apps_ad_block2 extends Widget_Base
                             </div>
                         </div>
                         <div class="accordion">
+                            <div class="accordion-active"></div>
                             <div class="accordion-items">
                                 <div class="accordion-items__top">
                                     <div class="accordion-items__left">

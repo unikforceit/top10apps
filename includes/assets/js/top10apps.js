@@ -23,15 +23,28 @@
             // Js End
         //})
     };
+    var Topads2 = function ($scope, $) {
+        $scope.find('.chart__body2').each(function () {
+            // Js Start
+            $('.toggle-accordion').on('click', function (){
+                $(this).next('div.accordion').toggleClass('accordion-open');
+                $('.accordion-active').next('div.accordion-items').toggleClass('accordion-items-open');
+                console.log('Toggle CLicked');
+            })
+            // Js End
+        })
+    };
 
     $(window).on('elementor/frontend/init', function () {
         if (elementorFrontend.isEditMode()) {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_review_header.default', StickySection);
+            elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_ad_block2.default', Topads2);
         }
         else {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_review_header.default', StickySection);
+            elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_ad_block2.default', Topads2);
         }
     });
 console.log('addon js loaded');
