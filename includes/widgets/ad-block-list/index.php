@@ -117,7 +117,7 @@ class  top10apps_ad_block extends Widget_Base
                 'label' => __('Title Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .jump_title' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row .center .bottom-line' => 'color: {{VALUE}}; border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -126,7 +126,7 @@ class  top10apps_ad_block extends Widget_Base
             [
                 'name' => 'ttih',
                 'label' => __('Title Typography', 'top10apps'),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .jump_title',
+                'selector' => '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row .center .bottom-line',
             ]
         );
         $this->add_control(
@@ -135,7 +135,7 @@ class  top10apps_ad_block extends Widget_Base
                 'label' => __('Item Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row .center .attributes li' => 'color: {{VALUE}}; border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -144,7 +144,7 @@ class  top10apps_ad_block extends Widget_Base
             [
                 'name' => 'ttsdfih',
                 'label' => __('Item Typography', 'top10apps'),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a',
+                'selector' => '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row .center .attributes li',
             ]
         );
         $this->add_group_control(
@@ -153,7 +153,42 @@ class  top10apps_ad_block extends Widget_Base
                 'name' => 'backgrouncfbxd',
                 'label' => esc_html__('Background', 'top10apps'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .page__left-sidebar',
+                'selector' => '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'backgrouncfbxds',
+                'label' => esc_html__('Background', 'top10apps'),
+                'selector' => '{{WRAPPER}} .chart__body__products .chart-product-text-body .product-row',
+            ]
+        );
+        $this->add_control(
+            'postb_titlea_colodfr',
+            [
+                'label' => __('Button Color', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .cta-button' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'tbtsdfih',
+                'label' => __('Button Typography', 'top10apps'),
+                'selector' => '{{WRAPPER}} .cta-button',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'btnbackgrouncfbxd',
+                'label' => esc_html__('Background', 'top10apps'),
+                'types' => ['classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .cta-button',
             ]
         );
         $this->end_controls_section();

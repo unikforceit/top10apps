@@ -1378,6 +1378,7 @@
 .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row .left .product-ribbon {
   box-sizing: border-box;
   position: absolute;
+  top: 10px;
   left: 0;
   pointer-events: none;
 }
@@ -1691,6 +1692,42 @@
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.25);
     max-width: 835px;
   }
+}
+.chart__body2 .chart__body__products2 .index-counter {
+  top: 50px;
+}
+@media (min-width: 1210px) {
+  .chart__body2 .chart__body__products2 .index-counter {
+    left: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+.chart__body2 .chart__body__products2 .index-counter {
+  color: #000;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  height: 35px;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  font-size: 22px;
+  line-height: 35px;
+  font-weight: 400;
+}
+.chart__body2 .chart__body__products2 .index-counter__value {
+  color: #000;
+  background-color: #fff;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #010233;
+  border-radius: 50%;
 }
 .chart__body2 .chart__body__products2 .addon__sale-badge__icon {
   width: 11px;

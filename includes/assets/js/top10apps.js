@@ -26,11 +26,15 @@
     var Topads2 = function ($scope, $) {
         $scope.find('.chart__body2').each(function () {
             // Js Start
-            $('.toggle-accordion').on('click', function (){
-                $(this).next('div.accordion').toggleClass('accordion-open');
-                $('.accordion-active').next('div.accordion-items').toggleClass('accordion-items-open');
+            $('.toggle-accordion').on('click',function () {
+                $(this).text(function(i, text){
+                    return text === "More info" ? "Less info" : "More info";
+                })
+                $(this).find('div.accordion').toggleClass("accordion-open");
+                $(this).find('div.accordion-items').toggleClass("accordion-items-open");
                 console.log('Toggle CLicked');
-            })
+                return false;
+            });
             // Js End
         })
     };

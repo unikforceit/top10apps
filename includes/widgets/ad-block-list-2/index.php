@@ -40,11 +40,11 @@ class  top10apps_ad_block2 extends Widget_Base
         );
         $repeater = new \Elementor\Repeater();
         $repeater->add_control(
-            'info',
+            'title',
             [
                 'label' => __('Info', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __('Adblock PlusThis free extension blocks banners, pop-ups, tracking, and malware, and by default leav...', 'top10apps'),
+                'default' => __('Gusto', 'top10apps'),
             ]
         );
         $repeater->add_control(
@@ -57,9 +57,9 @@ class  top10apps_ad_block2 extends Widget_Base
             ]
         );
         $repeater->add_control(
-            'img',
+            'logo',
             [
-                'label' => __('Image', 'moda'),
+                'label' => __('Logo', 'moda'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -67,15 +67,18 @@ class  top10apps_ad_block2 extends Widget_Base
             ]
         );
         $repeater->add_control(
-            'btn',
+            'rtext',
             [
                 'label' => __('Button', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Visit Site', 'top10apps'),
+                'default' => __('<span>
+                                          121<!-- -->
+                                       </span>
+                                        reviews', 'top10apps'),
             ]
         );
         $repeater->add_control(
-            'link', [
+            'rlink', [
                 'label' => __('Link', 'top10apps'),
                 'type' => Controls_Manager::URL,
                 'show_external' => true,
@@ -84,6 +87,30 @@ class  top10apps_ad_block2 extends Widget_Base
                     'is_external' => true,
                     'nofollow' => true,
                 ],
+            ]
+        );
+        $repeater->add_control(
+            'frtx',
+            [
+                'label' => __('Button', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('Free month trial', 'top10apps'),
+            ]
+        );
+        $repeater->add_control(
+            'exc',
+            [
+                'label' => __('Exceptional', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('exceptional', 'top10apps'),
+            ]
+        );
+        $repeater->add_control(
+            'rating',
+            [
+                'label' => __('Rating', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('9.8', 'top10apps'),
             ]
         );
         $this->add_control(
@@ -117,7 +144,7 @@ class  top10apps_ad_block2 extends Widget_Base
                 'label' => __('Title Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .jump_title' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row .center .bottom-line' => 'color: {{VALUE}}; border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -126,7 +153,7 @@ class  top10apps_ad_block2 extends Widget_Base
             [
                 'name' => 'ttih',
                 'label' => __('Title Typography', 'top10apps'),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .jump_title',
+                'selector' => '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row .center .bottom-line',
             ]
         );
         $this->add_control(
@@ -135,7 +162,7 @@ class  top10apps_ad_block2 extends Widget_Base
                 'label' => __('Item Color', 'top10apps'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row .center .attributes li' => 'color: {{VALUE}}; border-color: {{VALUE}}',
                 ],
             ]
         );
@@ -144,7 +171,7 @@ class  top10apps_ad_block2 extends Widget_Base
             [
                 'name' => 'ttsdfih',
                 'label' => __('Item Typography', 'top10apps'),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a',
+                'selector' => '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row .center .attributes li',
             ]
         );
         $this->add_group_control(
@@ -153,10 +180,46 @@ class  top10apps_ad_block2 extends Widget_Base
                 'name' => 'backgrouncfbxd',
                 'label' => esc_html__('Background', 'top10apps'),
                 'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .page__left-sidebar',
+                'selector' => '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'backgrouncfbxds',
+                'label' => esc_html__('Shadow', 'top10apps'),
+                'selector' => '{{WRAPPER}} .chart__body2 .chart__body__products2 .chart-product-text .chart-product-text-body .product-row',
+            ]
+        );
+        $this->add_control(
+            'postb_titlea_colodfr',
+            [
+                'label' => __('Button Color', 'top10apps'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .cta-button' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'tbtsdfih',
+                'label' => __('Button Typography', 'top10apps'),
+                'selector' => '{{WRAPPER}} .cta-button',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'btnbackgrouncfbxd',
+                'label' => esc_html__('Background', 'top10apps'),
+                'types' => ['classic', 'gradient'],
+                'selector' => '{{WRAPPER}} .cta-button',
             ]
         );
         $this->end_controls_section();
+
 
     }
 
@@ -176,16 +239,18 @@ class  top10apps_ad_block2 extends Widget_Base
                     <div class="chart-product-text-body null">
                         <div class="product-row  has-ribbon">
                             <div class="left">
-                                <div class="product-ribbon"><span class="product-ribbon__text">Our Most Popular</span></div>
+                                <?php if(!empty($scroll['ribbon'])){;?>
+                                <div class="product-ribbon"><span class="product-ribbon__text"><?php echo esc_html($scroll['ribbon']);?></span></div>
+                                <?php }?>
                                 <div class="left__info">
                                     <div class="index-counter">
-                                        <div class="index-counter__value">1</div>
+                                        <div class="index-counter__value"><?php echo esc_html($index);?></div>
                                         <div class="index-counter__border"></div>
                                     </div>
                                 </div>
                                 <div class="left__container">
                                     <div class="logo__container">
-                                        <div><img class="logo__image" src="https://images.top10.com/f_auto,q_auto/v1/production/products/uploads/photo/gusto_Logo_xSite.20200308135552.png"></div>
+                                        <div><img class="logo__image" src="<?php echo esc_url($scroll['logo']['url']);?>"></div>
                                     </div>
                                 </div>
                             </div>
@@ -193,45 +258,21 @@ class  top10apps_ad_block2 extends Widget_Base
                             <div class="center">
                                 <div class="center__header"></div>
                                 <div class="bottom-line">
-                                    <span class="bottom-line__product-name">Gusto</span>
-                                    <a class="review-link" href="/payroll/reviews/gusto"
-                                       >
-               <span>
-                  121<!-- --> 
-               </span>
-                                        reviews
+                                    <span class="bottom-line__product-name"><?php echo esc_html($scroll['title']);?></span>
+                                    <a class="review-link" <?php echo top10apps_get_that_link($scroll['rlink']);?>>
+                                        <?php echo wp_kses_post($scroll['title']);?>
                                     </a>
                                 </div>
                                 <ul class="attributes">
-                                    <li title="Best for small businesses">
-                                        <div class="" title=""><strong>Best for small businesses</strong></div>
-                                    </li>
-                                    <li title="PCMags best online payroll">
-                                        <div class="" title="">PCMags best online payroll</div>
-                                    </li>
-                                    <li title="&quot;Autopilot&quot; runs payroll itself">
-                                        <div class="" title="">"Autopilot" runs payroll itself</div>
-                                    </li>
-                                    <li title="Simple switchover + flat fee">
-                                        <div class="" title="">Simple switchover + flat fee</div>
-                                    </li>
-                                    <li title="Advanced hiring and onboarding tools">
-                                        <div class="" title="">Advanced hiring and onboarding tools</div>
-                                    </li>
+                                    <?php echo wp_kses_post($scroll['features']);?>
                                 </ul>
-                                <div class="addon__sale-badge">
-                                    <svg class="addon__sale-badge__icon">
-                                        <use xlink:href="#flame-icon"></use>
-                                    </svg>
-                                    <span class="addon__sale-badge__text">Free month trial</span>
-                                </div>
 
                             </div>
                             <div class="after-center"></div>
                             <div class="right">
                                 <div class="product-score real-score tooltip-animation">
-                                    <div class="product-score__text">exceptional</div>
-                                    <div class="product-score__number">9.8</div>
+                                    <div class="product-score__text"><?php echo esc_html($scroll['exc']);?></div>
+                                    <div class="product-score__number"><?php echo esc_html($scroll['rating']);?></div>
                                     <div class="real-score__card" data-role="score-card">
                                         <ul class="real-score__card__items">
                                             <li class="real-score__card__item">
@@ -298,17 +339,16 @@ class  top10apps_ad_block2 extends Widget_Base
                                         <svg class="addon__sale-badge__icon">
                                             <use xlink:href="#flame-icon"></use>
                                         </svg>
-                                        <span class="addon__sale-badge__text">Free month trial</span>
+                                        <span class="addon__sale-badge__text"><?php echo esc_html($scroll['frtx']);?></span>
                                     </div>
                                 </div>
                                 <div class="accordion-button-container">
-                                    <button type="button" class="toggle-accordion"><span class="toggle-accordion__text">Less info</span><span
+                                    <button type="button" class="toggle-accordion"><span class="toggle-accordion__text">More info</span><span
                                                 class="toggle-accordion__icon"></span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="accordion">
-                            <div class="accordion-active"></div>
                             <div class="accordion-items">
                                 <div class="accordion-items__top">
                                     <div class="accordion-items__left">
