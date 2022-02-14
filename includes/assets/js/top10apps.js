@@ -38,17 +38,47 @@
             // Js End
         })
     };
+    var slider = function ($scope, $) {
+        $scope.find('.comparison-table__root-element').each(function () {
+            // Js Start
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 8,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 0,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0,
+                    },
+                    992: {
+                        slidesPerView: 5,
+                        spaceBetween: 0,
+                    }
+                },
+            });
+            // Js End
+        })
+    };
 
     $(window).on('elementor/frontend/init', function () {
         if (elementorFrontend.isEditMode()) {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_review_header.default', StickySection);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_ad_block2.default', Topads2);
+            elementorFrontend.hooks.addAction('frontend/element_ready/hosting_slider.default', slider);
         }
         else {
             elementorFrontend.hooks.addAction('frontend/element_ready/global', Top10appsGlobal);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_review_header.default', StickySection);
             elementorFrontend.hooks.addAction('frontend/element_ready/top10apps_ad_block2.default', Topads2);
+            elementorFrontend.hooks.addAction('frontend/element_ready/hosting_slider.default', slider);
         }
     });
 console.log('addon js loaded');
