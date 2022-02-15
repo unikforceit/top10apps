@@ -53,7 +53,7 @@ class  top10apps_hosting_slider extends Widget_Base
             [
                 'label' => __( 'Title', 'top10apps' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'Review', 'top10apps' ),
+                'default' => __( 'Reviews', 'top10apps' ),
             ]
         );
         $this->add_control(
@@ -136,11 +136,79 @@ class  top10apps_hosting_slider extends Widget_Base
             ]
         );
         $repeater2->add_control(
-            'service_details',
+            'rating_number',
             [
-                'label' => __( 'Details', 'top10apps' ),
+                'label' => __( 'Rating', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => 3,
+            ]
+        );
+        $repeater2->add_control(
+            'review_btn',
+            [
+                'label' => __('Review number', 'ageland'),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => __('112 reviews', 'ageland'),
+            ]
+        );
+        $repeater2->add_control(
+            'review_btn_link', [
+                'label' => __('Review page link', 'ageland'),
+                'type' => Controls_Manager::URL,
+                'show_external' => true,
+                'default' => [
+                    'url' => '#',
+                    'is_external' => true,
+                    'nofollow' => true,
+                ],
+            ]
+        );
+        $repeater2->add_control(
+            'hosting_price',
+            [
+                'label' => __( 'Price per month', 'top10apps' ),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __( 'services', 'top10apps' ),
+                'default' => __( 'Starting at $2.95', 'top10apps' ),
+            ]
+        );
+        $repeater2->add_control(
+            'hosting_bandwidth',
+            [
+                'label' => __( 'Bandwidth', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( 'Unlimited', 'top10apps' ),
+            ]
+        );
+        $repeater2->add_control(
+            'hosting_offer',
+            [
+                'label' => __( 'Special offer', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( 'Free domain for first year, SSL, certificate', 'top10apps' ),
+            ]
+        );
+        $repeater2->add_control(
+            'hosting_uptime',
+            [
+                'label' => __( 'Hosting uptime', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( '99.99%', 'top10apps' ),
+            ]
+        );
+        $repeater2->add_control(
+            'hosting_web',
+            [
+                'label' => __( 'Website builder', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( 'Yes, Weebly, Drupal, etc.', 'top10apps' ),
+            ]
+        );
+        $repeater2->add_control(
+            'money_back',
+            [
+                'label' => __( 'Money back guarantee', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => __( '30 day', 'top10apps' ),
             ]
         );
         $this->add_control(
@@ -148,10 +216,22 @@ class  top10apps_hosting_slider extends Widget_Base
             [
                 'label' => __( 'Slider List', 'top10apps' ),
                 'type' => \Elementor\Controls_Manager::REPEATER,
-                'fields' => $repeater->get_controls(),
+                'fields' => $repeater2->get_controls(),
                 'default' => [
                     [
-                        'service_details' => __( 'Review', 'top10apps' ),
+                        'hosting_price' => __( 'Hosting Rating', 'top10apps' ),
+                    ],
+                    [
+                        'hosting_price' => __( 'Hosting Rating', 'top10apps' ),
+                    ],
+                    [
+                        'hosting_price' => __( 'Hosting Rating', 'top10apps' ),
+                    ],
+                    [
+                        'hosting_price' => __( 'Hosting Rating', 'top10apps' ),
+                    ],
+                    [
+                        'hosting_price' => __( 'Hosting Rating', 'top10apps' ),
                     ],
                 ],
             ]
@@ -166,12 +246,12 @@ class  top10apps_hosting_slider extends Widget_Base
             ]
         );
         $this->add_control(
-            'post_titlea_color',
+            'post_title_color',
             [
-                'label' => __( 'Title Color', 'top10apps' ),
+                'label' => __( 'Table Title Color', 'top10apps' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .jump_title' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .comparison-table__title' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -179,35 +259,91 @@ class  top10apps_hosting_slider extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ttih',
-                'label' => __( 'Title Typography', 'top10apps' ),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .jump_title',
+                'label' => __( 'Table Title Typography', 'top10apps' ),
+                'selector' => '{{WRAPPER}} .comparison-table__title',
             ]
         );
         $this->add_control(
-            'post_titlea_colodfr',
+            'field_title_color',
             [
-                'label' => __( 'Item Color', 'top10apps' ),
+                'label' => __( 'Field Test Color', 'top10apps' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a' => 'color: {{VALUE}}; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .comparison-table__section--container .feature-display-name' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
-                'name' => 'ttsdfih',
-                'label' => __( 'Item Typography', 'top10apps' ),
-                'selector' => '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a',
+                'name' => 'ttih',
+                'label' => __( 'Field Text Typography', 'top10apps' ),
+                'selector' => '{{WRAPPER}} .comparison-table__section--container .feature-display-name',
+            ]
+        );
+
+//        $this->add_control(
+//            'post_titlea_colodfr',
+//            [
+//                'label' => __( 'Item Color', 'top10apps' ),
+//                'type' => \Elementor\Controls_Manager::COLOR,
+//                'selectors' => [
+//                    '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a' => 'color: {{VALUE}};',
+//                ],
+//            ]
+//        );
+//        $this->add_group_control(
+//            \Elementor\Group_Control_Typography::get_type(),
+//            [
+//                'name' => 'ttsdfih',
+//                'label' => __( 'Item Typography', 'top10apps' ),
+//                'selector' => '{{WRAPPER}} .page__left-sidebar .toc__items .toc__item a',
+//            ]
+//        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Background::get_type(),
+            [
+                'name' => 'backgrouncfbxd',
+                'label' => esc_html__( 'ODD Field Background', 'top10apps' ),
+                'types' => [ 'classic', 'gradient' ],
+                'selector' => '{{WRAPPER}} .comparison-table__body-row:nth-of-type(odd), .comparison-table__sidebar--cell:nth-of-type(odd)',
             ]
         );
         $this->add_group_control(
             \Elementor\Group_Control_Background::get_type(),
             [
-                'name' => 'backgrouncfbxd',
-                'label' => esc_html__( 'Background', 'top10apps' ),
+                'name' => 'backgrouncfbxdeven',
+                'label' => esc_html__( 'EVEN Field Background', 'top10apps' ),
                 'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .page__left-sidebar',
+                'selector' => '{{WRAPPER}} .comparison-table__body-row:nth-of-type(even), .comparison-table__sidebar--cell:nth-of-type(even)',
+            ]
+        );
+        $this->add_control(
+            'icon_color',
+            [
+                'label' => __( 'Icon Color', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .rating i' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'review_color',
+            [
+                'label' => __( 'Review Color', 'top10apps' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} a.reviews-count' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'ttih',
+                'label' => __( 'Review Typography', 'top10apps' ),
+                'selector' => '{{WRAPPER}} .comparison-table__feature-display-name--text.rating-area .reviews-count',
             ]
         );
         $this->end_controls_section();
@@ -217,7 +353,6 @@ class  top10apps_hosting_slider extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-//        var_dump($settings['slist']);
         ?>
             <div class="comparison-table__root-element">
                 <div class="comparison-table__container">
@@ -229,7 +364,7 @@ class  top10apps_hosting_slider extends Widget_Base
                                 if($settings['slist']){
                                 foreach ($settings['slist'] as $lists){
                                  ?>
-                                    <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 33px 0;max-height: 82px;">
+                                    <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 33px 0;max-height: 82px;min-height: 82px;">
                                         <div class="comparison-table__feature-display-name--text"><?php echo esc_html($lists['review']);?></div>
                                     </div>
                                <?php }
@@ -245,63 +380,61 @@ class  top10apps_hosting_slider extends Widget_Base
                             <div class="swiper-wrapper">
                             <?php
                             if($settings['sliderlist']){
+                                $loop = 0;
                                 foreach ($settings['sliderlist'] as $slider){
+                                    $loop++;
                                     ?>
                                 <div class="swiper-slide">
                                     <div class="comparison-table__first-column">
                                         <div class="comparison-table__title host-site-link">
                                             <div class="host-area">
-                                                <span class="host-no">1</span>
+                                                <span class="host-no"><?php echo esc_html($loop);?></span>
                                                 <div class="host-img">
-                                                    <img class="logo__image" src="https://images.top10.com/f_auto,q_auto/v1/production/products/uploads/photo/Bluehost%20logo%20new.20210323132054.png" alt="BlueHost" title="">
+                                                    <?php echo top10apps_get_that_image($slider['host_image'], 'logo__image');?>
                                                 </div>
                                                 <div class="host-rating">
-                                                    <span>9.8</span>
+                                                    <span><?php echo esc_html($slider['host_rating']);?></span>
                                                 </div>
                                             </div>
-                                            <a class="comparison-table__product--cta" href="#" target="_blank">Visit Site</a>
+                                            <a class="comparison-table__product--cta" <?php echo top10apps_get_that_link($slider['host_btn_link']);?> class="btn-1" target="_blank"><?php echo esc_html($slider['host_btn']);?></a>
                                         </div>
                                         <div class="comparison-table__section--container comparison-table__section--container2">
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text rating-area">
                                                     <div class="rating">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
+                                                        <?php echo top10apps_client_ratings($slider['rating_number']);?>
                                                     </div>
-                                                    <a href="#" class="reviews-count">112 reviews</a>
+                                                    <a <?php echo top10apps_get_that_link($slider['review_btn_link']);?> class="reviews-count"><?php echo esc_html($slider['review_btn'])?></a>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>Starting at $2.95</span>
+                                                    <span><?php echo esc_html($slider['hosting_price']);?></span>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>Unlimited</span>
+                                                    <span><?php echo esc_html($slider['hosting_bandwidth']);?></span>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>Free domain for first year, SSL certificate</span>
+                                                    <span><?php echo esc_html($slider['hosting_offer']);?></span>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>99.99%</span>
+                                                    <span><?php echo esc_html($slider['hosting_uptime']);?></span>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>Yes, Weebly, Drupal, etc.</span>
+                                                    <span><?php echo esc_html($slider['hosting_web']);?></span>
                                                 </div>
                                             </div>
-                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 32px 0;max-height: 81px;">
+                                            <div class="comparison-table__sidebar--cell feature-display-name" style="padding: 40px 0;max-height: 82px;min-height:82px;">
                                                 <div class="comparison-table__feature-display-name--text">
-                                                    <span>30-day</span>
+                                                    <span><?php echo esc_html($slider['money_back']);?></span>
                                                 </div>
                                             </div>
                                         </div>
